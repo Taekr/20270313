@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>김영택 ♥ 정미영 결혼합니다</title>
+  <meta name="description" content="2027년 3월 13일 토요일 오후 2시, 엘블레스 다이아몬드홀">
+  <meta property="og:title" content="김영택 ♥ 정미영 결혼합니다">
+  <meta property="og:description" content="2027년 3월 13일 토요일 오후 2시 · 엘블레스 다이아몬드홀">
+  <!-- 카카오톡·문자 링크 미리보기: 배포 후 아래 두 줄의 https://도메인 을 실제 주소로 바꾸세요
+       (예: https://kim-jeong-wedding.vercel.app). 미리보기 사진은 images/og.jpg (1200×630) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://도메인/">
+  <meta property="og:image" content="https://도메인/images/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="theme-color" content="#f6f2ec">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="card">
+
+    <!-- 1. 메인 -->
+    <header class="hero">
+      <p class="hero-kicker">The Wedding of</p>
+      <p class="hero-date" id="heroDate"></p>
+      <div class="hero-photo">
+        <img id="mainPhoto" alt="신랑 신부 사진" fetchpriority="high">
+      </div>
+      <h1 class="hero-names">
+        <span id="heroGroom"></span>
+        <span class="amp">&amp;</span>
+        <span id="heroBride"></span>
+      </h1>
+      <p class="hero-names-en" id="heroNamesEn"></p>
+      <p class="hero-info" id="heroInfo"></p>
+    </header>
+
+    <!-- 2. 초대 문구 -->
+    <section class="section reveal" id="invitation">
+      <p class="label">Invitation</p>
+      <h2 class="title">소중한 분들을 초대합니다</h2>
+      <p class="poem">
+        서로의 계절을 지나<br>
+        같은 길 위에 나란히 섰습니다.<br><br>
+        겨울이 물러나고 봄이 시작되는 삼월,<br>
+        두 사람이 첫걸음을 함께 내딛는 날<br>
+        따뜻한 눈길로 지켜봐 주신다면<br>
+        더없는 기쁨으로 간직하겠습니다.
+      </p>
+    </section>
+
+    <!-- 3. 신랑·신부 및 혼주 -->
+    <section class="section reveal" id="family">
+      <div class="family-row" id="familyGroom"></div>
+      <div class="family-row" id="familyBride"></div>
+    </section>
+
+    <!-- 4. 일시 · 달력 · D-day -->
+    <section class="section section-tint reveal" id="when">
+      <p class="label">The Day</p>
+      <h2 class="title" id="whenTitle"></h2>
+      <p class="sub" id="whenSub"></p>
+      <div class="calendar" id="calendar" aria-label="예식 달력"></div>
+      <div class="countdown" id="countdown" aria-live="off">
+        <div><b data-k="d">0</b><span>Days</span></div>
+        <div><b data-k="h">0</b><span>Hours</span></div>
+        <div><b data-k="m">0</b><span>Min</span></div>
+        <div><b data-k="s">0</b><span>Sec</span></div>
+      </div>
+      <p class="dday" id="ddayText"></p>
+    </section>
+
+    <!-- 5. 갤러리 -->
+    <section class="section reveal" id="gallery">
+      <p class="label">Gallery</p>
+      <h2 class="title">우리의 순간들</h2>
+      <div class="gallery-grid" id="galleryGrid"></div>
+      <button class="btn-text" id="galleryMore" hidden>사진 더 보기</button>
+    </section>
+
+    <!-- 6. 오시는 길 -->
+    <section class="section reveal" id="location">
+      <p class="label">Location</p>
+      <h2 class="title">오시는 길</h2>
+      <p class="venue-name" id="venueName"></p>
+      <p class="venue-addr" id="venueAddr"></p>
+      <p class="venue-addr-en" id="venueAddrEn"></p>
+      <button class="btn-chip" id="copyAddr" type="button">주소 복사</button>
+
+      <div class="map" id="mapWrap"></div>
+
+      <div class="map-apps">
+        <a class="map-app" id="linkNaver" target="_blank" rel="noopener">네이버지도</a>
+        <a class="map-app" id="linkKakao" target="_blank" rel="noopener">카카오맵</a>
+        <a class="map-app" id="linkTmap">티맵</a>
+      </div>
+
+      <dl class="transit" id="transit"></dl>
+
+      <!-- 주차 안내 이미지 (js/config.js 의 venue.parkingImage) -->
+      <div class="parking" id="parkingWrap"></div>
+    </section>
+
+    <!-- 7. 마음 전하실 곳 (계좌 정보는 js/config.js 의 accounts 에 입력) -->
+    <section class="section section-tint reveal" id="account">
+      <p class="label">With Heart</p>
+      <h2 class="title">마음 전하실 곳</h2>
+      <p class="sub">참석이 어려우신 분들을 위해 자리를 마련했습니다.</p>
+      <div class="accounts" id="accounts"></div>
+    </section>
+
+    <!-- 8. 마무리 -->
+    <footer class="closing reveal">
+      <p class="closing-text">
+        오늘의 설렘을 오래 기억하며<br>
+        서로에게 다정한 사람으로 살겠습니다.
+      </p>
+      <p class="closing-sign" id="closingSign"></p>
+      <button class="btn-outline" id="shareBtn" type="button">청첩장 링크 공유하기</button>
+    </footer>
+  </main>
+
+  <!-- 사진 크게 보기 -->
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="사진 크게 보기">
+    <button class="lb-close" id="lbClose" aria-label="닫기">×</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="이전 사진">‹</button>
+    <img id="lbImg" alt="">
+    <button class="lb-nav lb-next" id="lbNext" aria-label="다음 사진">›</button>
+    <p class="lb-count" id="lbCount"></p>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
