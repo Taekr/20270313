@@ -4,7 +4,7 @@
  * [사진 바꾸는 법]
  *  1) 가장 쉬운 방법: web/images/ 안의 파일을 같은 이름으로 덮어쓰기
  *     - 메인 사진:   images/main.jpg   (정사각형 권장, 긴 변 1400px 정도)
- *     - 갤러리 사진: images/gallery/01.jpg, 02.jpg, ... (긴 변 1600px 정도)
+ *     - 갤러리 사진: images/gallery/1.jpg, 2.jpg, ... (긴 변 1600px 정도)
  *  2) 사진 개수를 늘리거나 줄이려면 아래 gallery 배열에 줄을 추가/삭제하세요.
  *     순서 = 화면에 보이는 순서입니다. 파일 이름은 자유롭게 써도 됩니다.
  *  ※ 큰 원본(수십 MB)을 그대로 넣으면 모바일에서 느려지니 줄여서 넣으세요.
@@ -84,15 +84,15 @@ window.WEDDING = {
 
   // 갤러리 사진 목록 — 줄을 추가/삭제/순서 변경하면 그대로 반영됩니다.
   gallery: [
-    'images/gallery/01.jpg',
-    'images/gallery/02.jpg',
-    'images/gallery/03.jpg',
-    'images/gallery/04.jpg',
-    'images/gallery/05.jpg',
-    'images/gallery/06.jpg',
-    'images/gallery/07.jpg',
-    'images/gallery/08.jpg',
-    'images/gallery/09.jpg',
+    'images/gallery/1.jpg',
+    'images/gallery/2.jpg',
+    'images/gallery/3.jpg',
+    'images/gallery/4.jpg',
+    'images/gallery/5.jpg',
+    'images/gallery/6.jpg',
+    'images/gallery/7.jpg',
+    'images/gallery/8.jpg',
+    'images/gallery/9.jpg',
   ],
 
   // 마음 전하실 곳 — 아직 정보가 없어 비워 두었습니다.
